@@ -143,7 +143,10 @@ services:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "healthcheck-horizon"]
-      start_period: 10s
+      interval: 60s
+      timeout: 30s
+      retries: 3
+      start_period: 60s
 
   scheduler:
     image: aeromax/relaticle:latest
@@ -189,7 +192,10 @@ services:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "healthcheck-schedule"]
-      start_period: 10s
+      interval: 60s
+      timeout: 30s
+      retries: 3
+      start_period: 60s
 
   reverb:
     image: aeromax/relaticle:latest
@@ -224,7 +230,10 @@ services:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "healthcheck-reverb"]
-      start_period: 10s
+      interval: 60s
+      timeout: 30s
+      retries: 3
+      start_period: 60s
 
   postgres:
     image: postgres:17-alpine
