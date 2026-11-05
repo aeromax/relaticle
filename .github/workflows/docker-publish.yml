@@ -32,7 +32,7 @@ concurrency:
 
 env:
   REGISTRY: ghcr.io
-  DOCKERHUB_IMAGE: manukminasyan/relaticle
+  DOCKERHUB_IMAGE: aeromax/relaticle
 
 jobs:
   build:
