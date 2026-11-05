@@ -137,6 +137,14 @@ services:
       SELF_HOSTED_AI_URL:
       SELF_HOSTED_AI_KEY:
       SELF_HOSTED_AI_MODELS:
+      MAIL_MAILER: ${MAIL_MAILER:-log}
+      MAIL_HOST: ${MAIL_HOST:-}
+      MAIL_PORT: ${MAIL_PORT:-587}
+      MAIL_USERNAME: ${MAIL_USERNAME:-}
+      MAIL_PASSWORD: ${MAIL_PASSWORD:-}
+      MAIL_ENCRYPTION: ${MAIL_ENCRYPTION:-tls}
+      MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS:-hello@example.com}
+      MAIL_FROM_NAME: ${MAIL_FROM_NAME:-Relaticle}
       # Disable automations for worker container
       AUTORUN_ENABLED: "false"
     extra_hosts:
@@ -193,6 +201,14 @@ services:
       BROADCAST_REVERB_PORT: 8080
       BROADCAST_REVERB_SCHEME: http
       REVERB_APP_SECRET:
+      MAIL_MAILER: ${MAIL_MAILER:-log}
+      MAIL_HOST: ${MAIL_HOST:-}
+      MAIL_PORT: ${MAIL_PORT:-587}
+      MAIL_USERNAME: ${MAIL_USERNAME:-}
+      MAIL_PASSWORD: ${MAIL_PASSWORD:-}
+      MAIL_ENCRYPTION: ${MAIL_ENCRYPTION:-tls}
+      MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS:-hello@example.com}
+      MAIL_FROM_NAME: ${MAIL_FROM_NAME:-Relaticle}
       # Disable automations for scheduler container
       AUTORUN_ENABLED: "false"
     volumes:
