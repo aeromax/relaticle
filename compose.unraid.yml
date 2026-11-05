@@ -1,6 +1,10 @@
 # Unraid: Docker > Compose Manager > add stack, paste this file + a .env (see .env.unraid.example)
 services:
   app:
+    labels:
+      net.unraid.docker.managed: composeman
+      net.unraid.docker.icon: https://raw.githubusercontent.com/aeromax/relaticle/main/public/apple-touch-icon.png
+      net.unraid.docker.webui: "http://[IP]:${APP_PORT:-8686}"
     image: aeromax/relaticle:latest
     restart: unless-stopped
     ports:
@@ -88,6 +92,9 @@ services:
       start_period: 60s
 
   horizon:
+    labels:
+      net.unraid.docker.managed: composeman
+      net.unraid.docker.icon: https://raw.githubusercontent.com/aeromax/relaticle/main/public/apple-touch-icon.png
     image: aeromax/relaticle:latest
     restart: unless-stopped
     command: ["php", "/var/www/html/artisan", "horizon"]
@@ -149,6 +156,9 @@ services:
       start_period: 60s
 
   scheduler:
+    labels:
+      net.unraid.docker.managed: composeman
+      net.unraid.docker.icon: https://raw.githubusercontent.com/aeromax/relaticle/main/public/apple-touch-icon.png
     image: aeromax/relaticle:latest
     restart: unless-stopped
     command: ["php", "/var/www/html/artisan", "schedule:work"]
@@ -198,6 +208,9 @@ services:
       start_period: 60s
 
   reverb:
+    labels:
+      net.unraid.docker.managed: composeman
+      net.unraid.docker.icon: https://raw.githubusercontent.com/aeromax/relaticle/main/public/apple-touch-icon.png
     image: aeromax/relaticle:latest
     restart: unless-stopped
     command: ["php", "/var/www/html/artisan", "reverb:start", "--host=0.0.0.0", "--port=8080"]
@@ -236,6 +249,9 @@ services:
       start_period: 60s
 
   postgres:
+    labels:
+      net.unraid.docker.managed: composeman
+      net.unraid.docker.icon: https://raw.githubusercontent.com/aeromax/relaticle/main/public/apple-touch-icon.png
     image: postgres:17-alpine
     restart: unless-stopped
     environment:
@@ -251,6 +267,9 @@ services:
       retries: 5
 
   redis:
+    labels:
+      net.unraid.docker.managed: composeman
+      net.unraid.docker.icon: https://raw.githubusercontent.com/aeromax/relaticle/main/public/apple-touch-icon.png
     image: redis:7-alpine
     restart: unless-stopped
     command: redis-server --appendonly yes
